@@ -21,4 +21,9 @@ class ProductTest extends TestCase
             ->assertStatus(201);
 
     }
+
+    public function testGetProducts(){
+        $response = $this->get('/index.php/api/products/');
+        return $response->assertStatus(201);
+    }
 }
