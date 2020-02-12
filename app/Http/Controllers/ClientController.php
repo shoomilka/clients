@@ -12,24 +12,21 @@ class ClientController extends Controller
         return Client::all();
     }
 
-    public function show($id)
+    public function show(Client $client)
     {
-        $client = Client::findOrFail($id);
         return $client;
     }
 
     public function store(Request $request)
     {
-        $client = Client::createValidated($request);
+        $client = Client::create($request);
         if($client) return response()->json($client, 201);
         return response()->json(null, 404);
     }
 
-    public function delete($id)
+    public function delete(Client $client)
     {
-        $client = Client::findOrFail($id);
         $client->delete();
-
         return response()->json(null, 204);
     }
 }
