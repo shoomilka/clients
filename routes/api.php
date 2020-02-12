@@ -22,9 +22,9 @@ Route::get('products', 'ProductController@index');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
 Route::put('products/{id}', 'ProductController@update');
-Route::get('deleteproduct/{id}', 'ProductController@delete');
+Route::delete('products/{id}', 'ProductController@delete');
 
 Route::get('clients', 'ClientController@index');
 Route::get('clients/{id}', 'ClientController@show');
 Route::post('clients', 'ClientController@store');
-Route::get('deleteclient/{id}', 'ClientController@delete');
+Route::delete('clients/{id}', 'ClientController@delete');
